@@ -2,7 +2,7 @@
 
 Implementation of the Banker's Algorithm in C, kept in a GitHub repository and built automatically with GitHub Actions.
 
-**Author:** Your Name | UID Your UID | Batch Your Batch
+**Author:** Name: Fiona Samuel | UID: 24003140 | Batch: B2
 
 ## What it does
 - Reads the number of processes and resource types, then the Allocation matrix, the Maximum matrix and the Available vector.
