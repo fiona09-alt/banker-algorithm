@@ -1,0 +1,72 @@
+==============================================
+ Banker's Algorithm - Deadlock Avoidance
+ Name: Your Name | UID: Your UID | Batch: Your Batch
+==============================================
+
+Enter number of processes (max 10) and resource types (max 10): Enter the Allocation matrix (5 x 3):
+Enter the Maximum matrix (5 x 3):
+Enter the Available vector (3 values):
+
+Process | Allocation | Max        | Need       |
+P1      |  0  1  0   |  7  5  3   |  7  4  3   |
+P2      |  2  0  0   |  3  2  2   |  1  2  2   |
+P3      |  3  0  2   |  9  0  2   |  6  0  0   |
+P4      |  2  1  1   |  2  2  2   |  0  1  1   |
+P5      |  0  0  2   |  4  3  3   |  4  3  1   |
+
+Available = [3, 3, 2]
+
+Safety algorithm steps:
+  P2: Need [1, 2, 2] <= Work [3, 3, 2] -> runs, releases resources, Work = [5, 3, 2]
+  P4: Need [0, 1, 1] <= Work [5, 3, 2] -> runs, releases resources, Work = [7, 4, 3]
+  P5: Need [4, 3, 1] <= Work [7, 4, 3] -> runs, releases resources, Work = [7, 4, 5]
+  P1: Need [7, 4, 3] <= Work [7, 4, 5] -> runs, releases resources, Work = [7, 5, 5]
+  P3: Need [6, 0, 0] <= Work [7, 5, 5] -> runs, releases resources, Work = [10, 5, 7]
+Result: SAFE state.
+Safe sequence: P2 -> P4 -> P5 -> P1 -> P3
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: Enter process number (1-5): Enter request for 3 resource types: 
+Request by P2 = [1, 0, 2]
+Granted: the system stays in a SAFE state.
+Safe sequence: P2 -> P4 -> P5 -> P1 -> P3
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: Enter process number (1-5): Enter request for 3 resource types: 
+Request by P5 = [3, 3, 0]
+P5 must wait: the resources are not available right now.
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: Enter process number (1-5): Enter request for 3 resource types: 
+Request by P1 = [0, 2, 0]
+Denied: granting this request would leave the system in an UNSAFE state.
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: 
+Process | Allocation | Max        | Need       |
+P1      |  0  1  0   |  7  5  3   |  7  4  3   |
+P2      |  3  0  2   |  3  2  2   |  0  2  0   |
+P3      |  3  0  2   |  9  0  2   |  6  0  0   |
+P4      |  2  1  1   |  2  2  2   |  0  1  1   |
+P5      |  0  0  2   |  4  3  3   |  4  3  1   |
+
+Available = [2, 3, 0]
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: 
+Program ended.

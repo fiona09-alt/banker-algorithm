@@ -1,0 +1,15 @@
+name: Build and run Banker's Algorithm
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile
+        run: gcc -Wall -o banker banker.c
+      - name: Run safe sample
+        run: ./banker < sample_input.txt
+      - name: Run unsafe sample
+        run: ./banker < sample_input_unsafe.txt

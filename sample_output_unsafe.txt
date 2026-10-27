@@ -1,0 +1,27 @@
+==============================================
+ Banker's Algorithm - Deadlock Avoidance
+ Name: Your Name | UID: Your UID | Batch: Your Batch
+==============================================
+
+Enter number of processes (max 10) and resource types (max 10): Enter the Allocation matrix (5 x 3):
+Enter the Maximum matrix (5 x 3):
+Enter the Available vector (3 values):
+
+Process | Allocation | Max        | Need       |
+P1      |  0  1  0   |  7  5  3   |  7  4  3   |
+P2      |  2  0  0   |  3  2  2   |  1  2  2   |
+P3      |  3  0  2   |  9  0  2   |  6  0  0   |
+P4      |  2  1  1   |  2  2  2   |  0  1  1   |
+P5      |  0  0  2   |  4  3  3   |  4  3  1   |
+
+Available = [0, 0, 0]
+
+Safety algorithm steps:
+Result: UNSAFE state. No order lets every process finish.
+
+1. Make a resource request
+2. Show current state
+3. Run the safety algorithm again
+4. Exit
+Enter your choice: 
+Program ended.
